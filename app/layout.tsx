@@ -1,7 +1,29 @@
-// app/layout.tsx
-import React from "react";
-
-export const metadata = { title: "VICLARI" };
+export const metadata = {
+  title: "VICLARI — Your vision, made clear",
+  description:
+    "A production-ready Next.js starter deployed on Vercel with Tailwind CSS and TypeScript.",
+  metadataBase: new URL("https://viclari.com"),
+  openGraph: {
+    title: "VICLARI",
+    description:
+      "A production-ready Next.js starter deployed on Vercel with Tailwind CSS and TypeScript.",
+    url: "https://viclari.com",
+    siteName: "VICLARI",
+    images: [
+      {
+        url: "/og.png", // add later (optional)
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function RootLayout({
   children,
@@ -10,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
